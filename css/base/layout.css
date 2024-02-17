@@ -3,11 +3,6 @@
   padding: 60px 0;
 }
 
-.container > .row {
-  width: 1000px;
-  margin: 0 calc(50% - 500px);
-}
-
 .container > .row-short {
     display: flex;
     flex-direction: column;
@@ -15,6 +10,23 @@
     gap: 20px;
   width: 600px;
   margin: 0 calc(50% - 300px);
+}
+
+.container > .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px 10%;
+    width: 1000px;
+    margin: 0 calc(50% - 500px);
+  }
+
+.container .column{
+    width: 50%;
+}
+
+.column.right-column {
+    width: 40%;
+    /* margin-left: auto; */
 }
 
 @media (max-width: 1100px) {
@@ -37,6 +49,10 @@
     width: 400px;
     margin: 0 calc(50% - 200px);
   }
+  .container .column,
+  .column.right-column {
+    width: 100%;
+}
 }
 
 @media (max-width: 440px) {
@@ -49,3 +65,39 @@
     width: 100%;
     margin: 0;
 }
+
+
+/* CSS taisyklės */
+
+/* 1. daugiau laimi prieš mažiau */
+/* 2. ">" neturi įtakos */
+/* 3. laimi tas, kas yra paskutinis faile */
+/* 4. net ir 1 klasė laimi prieš N tagų */
+/* 5. net ir 1 ID laimi prieš N klasių ir M tagų */
+
+/* 1. tag < klasės < ID */
+/* 2. kiekis: kuo daugiau, tuo geriau */
+/* jei 1 & 2 sutampa, laimi paskutinis*/
+
+/* <a id="y" class="x"></a> */
+
+/*
+#y {
+    color: black;       /*1,0,0*/
+}
+.x {
+    color: green;       /*0,1,0*/
+}
+section div > a {
+    color: yellow       /*0,0,3*/
+}
+section div a {
+    color: pink         /*0,0,3*/
+}
+div > a {
+    color: red;         /*0,0,2*/
+}
+a {
+    color: blue         /*0,0,1*/
+}
+*/
