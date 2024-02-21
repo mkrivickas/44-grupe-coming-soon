@@ -6,6 +6,8 @@
 @import "../3rd-party/font-awesome.min.css";
 
 /* components */
+@import url(../components/clock.css);
+
 /* CUSTOM STYLE BELOW THIS LINE */
 .logo {
   width: 3rem;
